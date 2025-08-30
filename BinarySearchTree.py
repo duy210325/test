@@ -71,18 +71,18 @@ class BinarySearchTree:
         elif key < root.value:
             root.left = self._delete(key, root.left)
         else: # key == value
-            # node is leaf
+            
             if root.left is None and root.right is None:
                 return None
-            # node has at least 1 child
+            
             else:
-                # node has 1 child
+                
                 if root.right is None:
                     return root.left
                 elif root.left is None:
                     return root.right
-                else: 
-                
+                else:  
+                    
                     root.value = self.findMax(root.left)
                     
                     root.left = self._delete(root.value, root.left)
