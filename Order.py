@@ -28,6 +28,14 @@ class dataList:
         if self.head is None:
             print('Empty')
         current = self.head
+        while current:
+            print(current.data)
+            current = current.next
+            print('==============')
+    def loadData(self, file_path, size):
+        data = read_file(file_path)[0]
+        for i in range(size):
+            self.enqueue(data)[3*i], data[3*i+1], data[3*i+2]
 class RequestQueue: 
     def dequeue(self):
         tmp = None
